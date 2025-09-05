@@ -1,0 +1,18 @@
+default_platform(:ios)
+
+platform :ios do
+  before_all do
+    # Load environment variables from .env file
+    dotenv
+  end
+
+  desc "Push a new beta build to TestFlight"
+  lane :beta do
+    build_app(workspace: "Runner.xcworkspace", scheme: "Runner")
+    upload_to_testflight(
+      username: ENV["FASTLANE_USER"],
+      team_id: ENV["FASTLANE_APPLE_TEAM_ID"],
+      itc_team_id: ENV["FASTLANE_ITC_TEAM_ID"],
+    )
+  end
+end

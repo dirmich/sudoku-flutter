@@ -1,0 +1,20 @@
+default_platform(:android)
+
+platform :android do
+  before_all do
+    # Load environment variables from .env file
+    dotenv
+  end
+
+  desc "Push a new beta build to the Play Store"
+  lane :beta do
+    build_app(
+      task: "assembleRelease"
+    )
+    upload_to_play_store(
+      track: 'beta',
+      json_key: ENV["JSON_KEY_FILE"],
+      package_name: ENV["PACKAGE_NAME"],
+    )
+  end
+end
