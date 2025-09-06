@@ -1,20 +1,19 @@
 default_platform(:android)
 
 platform :android do
-  before_all do
-    # Load environment variables from .env file
-    dotenv
-  end
-
   desc "Push a new beta build to the Play Store"
   lane :beta do
+    config = JSON.parse(File.read("fastlane/fastlane_config.json"))
+    json_key_file = config["json_key_file"]
+    package_name = config["package_name"]
+
     build_app(
       task: "assembleRelease"
     )
     upload_to_play_store(
       track: 'beta',
-      json_key: ENV["JSON_KEY_FILE"],
-      package_name: ENV["PACKAGE_NAME"],
+      json_key: json_key_file,
+      package_name: package_name,
     )
   end
 end

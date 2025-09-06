@@ -1,0 +1,4 @@
+{
+  "json_key_file": "/path/to/your/google-play-key.json",
+  "package_name": "com.example.sudoku"
+}
