@@ -2,7 +2,8 @@ import 'dart:math';
 
 class SudokuGenerator {
   List<List<int>> board = List.generate(9, (_) => List.generate(9, (_) => 0));
-  List<List<int>> solution = List.generate(9, (_) => List.generate(9, (_) => 0));
+  List<List<int>> solution =
+      List.generate(9, (_) => List.generate(9, (_) => 0));
 
   List<List<List<int>>> generate(String difficulty) {
     _fillBoard();
