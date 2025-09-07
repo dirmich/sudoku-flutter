@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "990096951424",
+    "project_id": "sudoku-flutter-1",
+    "storage_bucket": "sudoku-flutter-1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:990096951424:android:1f6ce2f5d028be72dd3e65",
+        "android_client_info": {
+          "package_name": "com.example.sudoku"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6P-OfHZH1D9e1cYBeNagtBugGxL1Op3k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
